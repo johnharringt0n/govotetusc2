@@ -1,12 +1,14 @@
 ---
-templateKey: 'about-page'
-path: /about
+templateKey: about-page
 title: About Go Vote Tust
 ---
-
 # This is something new
 
 But where does the `.content` tag get applied and how do I make this text red? Is everything inline styled?
+
+And here I've added in an additional bit straight from the CMS which is pretty cool?
+
+![This picture of airbud? lol](/img/air-bud-director-charles-martin-smith-doesnt-like.jpg)
 
 ### Shade-grown coffee
 
