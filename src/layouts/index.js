@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import './all.sass';
 
 const TemplateWrapper = ({ children }) => (
-  <div className="has-navbar-fixed-top">
+  <div>
     <Helmet title="Go Vote Tusc Co" />
     <Navbar />
     <div>{children()}</div>
