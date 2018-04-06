@@ -1,16 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
-import capital from '../img/capital.jpg';
 
-const fullImgContainer = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100vw',
-  height: '100vh',
-  backgroundImage: 'url({ capital })',
-};
+import Mailchimp from '../components/Mailchimp';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -24,6 +16,7 @@ export default class IndexPage extends React.Component {
               </h1>
               <p>This is some more content!</p>
               <p>Down here would be our mailChimp signup link</p>
+              <Mailchimp />
             </div>
           </div>
         </section>

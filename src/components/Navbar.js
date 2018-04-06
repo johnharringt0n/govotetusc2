@@ -6,9 +6,7 @@ import {
   faFacebookSquare,
 } from '@fortawesome/fontawesome-free-brands';
 import { faEnvelopeSquare } from '@fortawesome/fontawesome-free-solid';
-
-import github from '../img/github-icon.svg';
-import logo from '../img/logo.svg';
+import logo from '../img/hor_logo.svg';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -36,9 +34,11 @@ class Navbar extends React.Component {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item">
-              <figure className="image">
-                <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-              </figure>
+              <img
+                src={logo}
+                alt="Go Vote Tusc"
+                style={{ maxHeight: '2.25rem' }}
+              />
             </Link>
 
             <div
@@ -66,26 +66,41 @@ class Navbar extends React.Component {
 
             <div className="navbar-end">
               <div className="navbar-item">
-                <a
-                  target="_blank"
-                  href="https://twitter.com"
-                  className="icon navbar-item"
-                >
-                  <FontAwesomeIcon icon={faTwitterSquare} size="2x" />
-                </a>
+                <div className="field is-grouped">
+                  <a
+                    target="_blank"
+                    href="https://twitter.com/govotetusc"
+                    className="button is-white"
+                  >
+                    <span className="icon is-medium">
+                      <FontAwesomeIcon
+                        icon={faTwitterSquare}
+                        transform="grow-6"
+                      />
+                    </span>
+                  </a>
+                  <a
+                    target="_blank"
+                    href="https://facebook.com/govotetusc"
+                    className="button is-white"
+                  >
+                    <span className="icon is-medium">
+                      <FontAwesomeIcon
+                        icon={faFacebookSquare}
+                        transform="grow-6"
+                      />
+                    </span>
+                  </a>
+                  <Link className="button is-white" to="/contact">
+                    <span className="icon is-medium">
+                      <FontAwesomeIcon
+                        icon={faEnvelopeSquare}
+                        transform="grow-6"
+                      />
+                    </span>
+                  </Link>
+                </div>
               </div>
-              <div className="navbar-item">
-                <a
-                  target="_blank"
-                  href="https://facebook.com"
-                  className="icon navbar-item"
-                >
-                  <FontAwesomeIcon icon={faFacebookSquare} size="2x" />
-                </a>
-              </div>
-              <Link className="navbar-item" to="/contact">
-                <FontAwesomeIcon icon={faEnvelopeSquare} size="2x" />
-              </Link>
             </div>
           </div>
         </div>
