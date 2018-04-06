@@ -14,10 +14,6 @@ class Mailchimp extends React.Component {
     this.setState({ email: event.target.value });
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-  };
-
   render() {
     return (
       <div className="columns is-centered">
@@ -27,7 +23,7 @@ class Mailchimp extends React.Component {
             Subscribe to our newsletter to recieve updates on voting deadlines,
             ways to get involved, and additional information about the issues.
           </p>
-          <form onSubmit={this.handleSubmit} data-netlify="true" name="mailchimpSignup">
+          <form data-netlify="true" name="mailchimpSignup">
             <div className="field has-addons">
               <div className="control has-icons-left is-expanded">
                 <input
