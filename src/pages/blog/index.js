@@ -6,8 +6,9 @@ import styled from 'styled-components';
 
 const GridArea = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
   grid-gap: 20px;
+  padding: 10px 20px;
 `;
 
 const PostContainer = styled.div`
@@ -21,30 +22,32 @@ const PostContainer = styled.div`
 
 const Post = ({ post }) => {
   return (
-    <PostContainer key={post.id}>
-      <div>
-        <Link
-          className="title is-spaced is-4 is-size-5-mobile"
-          to={post.fields.slug}
-        >
-          {post.frontmatter.title}
-        </Link>
-        <p className="subtitle is-6 is-size-6-mobile">
-          {post.frontmatter.date}
-        </p>
-      </div>
-      <div style={{ padding: '10px 0px', alignSelf: 'center' }}>
-        <p>{post.excerpt}</p>
-      </div>
-      <div>
-        <Link
-          className="button is-small is-primary is-outlined"
-          to={post.fields.slug}
-        >
-          Keep Reading →
-        </Link>
-      </div>
-    </PostContainer>
+    <div className="column is-half" style={{ display: 'flex' }} key={post.id}>
+      <PostContainer>
+        <div>
+          <Link
+            className="title is-spaced is-4 is-size-5-mobile"
+            to={post.fields.slug}
+          >
+            {post.frontmatter.title}
+          </Link>
+          <p className="subtitle is-6 is-size-6-mobile">
+            {post.frontmatter.date}
+          </p>
+        </div>
+        <div style={{ padding: '10px 0px', alignSelf: 'center' }}>
+          <p>{post.excerpt}</p>
+        </div>
+        <div>
+          <Link
+            className="button is-small is-primary is-outlined"
+            to={post.fields.slug}
+          >
+            Keep Reading →
+          </Link>
+        </div>
+      </PostContainer>
+    </div>
   );
 };
 
@@ -61,13 +64,13 @@ export default class IndexPage extends React.Component {
         />
         <section className="section" style={{ paddingTop: '0px' }}>
           <div className="container">
-            <GridArea>
+            <div className="columns is-multiline">
               {posts
                 .filter(
                   post => post.node.frontmatter.templateKey === 'blog-post'
                 )
                 .map(({ node: post }) => <Post key={post.id} post={post} />)}
-            </GridArea>
+            </div>
           </div>
         </section>
       </div>
