@@ -1,13 +1,16 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 // Config vars
-$vote-red: #cd474b;
-$vote-blue: #1d0862;
+$vote-red: #CD474B;
+$vote-blue: #12315D;
 $vote-blue-invert: #ffffff;
 
 $primary: $vote-blue
 $primary-invert: $vote-blue-invert
 $link: $vote-red
+$family-sans-serif: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif
+$title-size: 4.5rem;
 
 .content .taglist
   list-style: none
@@ -62,6 +65,13 @@ $link: $vote-red
   left: 0; right: 0;
   top: 0; bottom: 0;
   background: rgba(18,49,93,.85);
+
+.home-divider-line
+  height: 2px;
+  width: 100px;
+  background-color: #cd474b;
+  border-radius: 10px;
+  margin: 5px 0px 10px 0px;
 
 
 @import "~bulma"

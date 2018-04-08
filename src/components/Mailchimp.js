@@ -2,27 +2,18 @@ import React from 'react';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/fontawesome-free-solid';
 
-const SignupText = ({ isSubmitted }) => {
-  if (isSubmitted === true) {
-    return [
-      <h3 key="0" className="has-text-weight-bold">
-        Thanks for signing up!
-      </h3>,
-      <p key="1">
-        We've received your email and we're excited to have you on board.
-      </p>,
-    ];
+function SignupButton({ loading, submitted }) {
+  if (loading) {
+    return <button className="button is-primary is-loading">Subscribe</button>;
+  } else if (submitted) {
+    return (
+      <button className="button is-success" disabled>
+        You're Subscribed!
+      </button>
+    );
   }
-  return [
-    <h3 key="0" className="has-text-weight-bold">
-      Want To Get Involved?
-    </h3>,
-    <p key="1">
-      Subscribe to our newsletter to recieve updates on voting deadlines, ways
-      to get involved, and additional information about the issues.
-    </p>,
-  ];
-};
+  return <button className="button is-primary">Subscribe</button>;
+}
 
 class Mailchimp extends React.Component {
   constructor() {
@@ -30,6 +21,7 @@ class Mailchimp extends React.Component {
     this.state = {
       email: '',
       isSubmitted: false,
+      isLoading: false,
     };
   }
 
@@ -44,6 +36,15 @@ class Mailchimp extends React.Component {
   };
 
   handleSubmit = event => {
+    event.preventDefault();
+
+    if (this.state.email === '') {
+      alert('Please fill in your email first!');
+      return;
+    }
+
+    this.setState({ isLoading: true });
+
     const toSend = this.encode({
       'form-name': 'mailchimpSignup',
       ...this.state,
@@ -55,7 +56,12 @@ class Mailchimp extends React.Component {
       body: toSend,
     })
       .then(() => {
-        this.setState({ isSubmitted: true });
+        setTimeout(() => {
+          this.setState({
+            isLoading: false,
+            isSubmitted: true,
+          });
+        }, 1000);
       })
       .catch(error => {
         alert(
@@ -64,44 +70,38 @@ class Mailchimp extends React.Component {
           }`
         );
       });
-
-    event.preventDefault();
   };
 
   render() {
     return (
-      <div className="columns is-centered">
-        <div className="column is-half-desktop" style={{ textAlign: 'center' }}>
-          <SignupText isSubmitted={this.state.isSubmitted} />
-          <form
-            data-netlify="true"
-            name="mailchimpSignup"
-            onSubmit={this.handleSubmit}
-          >
-            <div className="field has-addons">
-              <div className="control has-icons-left is-expanded">
-                <input
-                  className="input"
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  onChange={this.handleChange}
-                  disabled={this.state.isSubmitted}
-                />
-                <span className="icon is-small is-left">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </span>
-              </div>
-              <div className="control">
-                <input
-                  type="submit"
-                  className="button is-primary"
-                  value="Subscribe"
-                />
-              </div>
+      <div style={{ width: '100%', maxWidth: '600px', margin: '20px 0px' }}>
+        <form
+          data-netlify="true"
+          name="mailchimpSignup"
+          onSubmit={this.handleSubmit}
+        >
+          <div className="field has-addons">
+            <div className="control has-icons-left is-expanded">
+              <input
+                className="input"
+                type="email"
+                name="email"
+                placeholder="Subscribe to the GoVoteTusc newsletter"
+                onChange={this.handleChange}
+                disabled={this.state.isSubmitted}
+              />
+              <span className="icon is-small is-left">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
             </div>
-          </form>
-        </div>
+            <div className="control">
+              <SignupButton
+                loading={this.state.isLoading}
+                submitted={this.state.isSubmitted}
+              />
+            </div>
+          </div>
+        </form>
       </div>
     );
   }
