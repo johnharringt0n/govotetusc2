@@ -75,7 +75,7 @@ class Navbar extends React.Component {
                     <span className="icon is-medium">
                       <FontAwesomeIcon
                         icon={faTwitterSquare}
-                        transform="grow-6"
+                        transform="grow-8"
                       />
                     </span>
                   </a>
@@ -87,18 +87,22 @@ class Navbar extends React.Component {
                     <span className="icon is-medium">
                       <FontAwesomeIcon
                         icon={faFacebookSquare}
-                        transform="grow-6"
+                        transform="grow-8"
                       />
                     </span>
                   </a>
-                  <Link className="button is-white" to="/contact">
+                  <a
+                    target="_blank"
+                    href="http://eepurl.com/dqxj3j"
+                    className="button is-white"
+                  >
                     <span className="icon is-medium">
                       <FontAwesomeIcon
                         icon={faEnvelopeSquare}
-                        transform="grow-6"
+                        transform="grow-8"
                       />
                     </span>
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
