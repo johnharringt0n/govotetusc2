@@ -4,7 +4,7 @@ import Content, { HTMLContent } from '../components/Content';
 import style from 'styled-components';
 import PageHeader from '../components/PageHeader';
 
-export const AboutPageTemplate = ({
+export const BallotMeasuresTemplate = ({
   title,
   subtitle,
   content,
@@ -27,18 +27,18 @@ export const AboutPageTemplate = ({
   );
 };
 
-AboutPageTemplate.propTypes = {
+BallotMeasuresTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 };
 
-const AboutPage = ({ data }) => {
+const BallotMeasuresPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <AboutPageTemplate
+    <BallotMeasuresTemplate
       contentComponent={HTMLContent}
       title={post.frontmatter.title}
       subtitle={post.frontmatter.subtitle}
@@ -47,14 +47,14 @@ const AboutPage = ({ data }) => {
   );
 };
 
-AboutPage.propTypes = {
+BallotMeasuresPage.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default AboutPage;
+export default BallotMeasuresPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
+export const ballotMeasuresPageQuery = graphql`
+  query BallotMeasuresPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
