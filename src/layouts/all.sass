@@ -52,12 +52,22 @@ $title-size: 4.5rem;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('../img/background02b.jpg') no-repeat center;
-  background-size: cover;
-  position: relative
+  background-size: cover !important;
+  position: relative;
+
+  // Mobile
+  background: url('../img/background_mobile.jpg') no-repeat center;
+
+  // Tablet
+  @media (min-width: 769px)
+    background: url('../img/background_tablet.jpg') no-repeat center;
+
+  // Desktop
+  @media (min-width: 1024px)
+    background: url('../img/background_desktop.jpg') no-repeat center;
 
   *
-    z-index: 10
+    z-index: 10;
 
 #fullPageBackground:before
   content: "";
