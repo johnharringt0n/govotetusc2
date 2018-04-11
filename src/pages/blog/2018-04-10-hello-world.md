@@ -6,12 +6,13 @@ description: This is the description of the blog post
 tags:
   - test
 ---
+
 And this is the body of the blog post here.
 
 # Adding a h1 heading
 
 * And a
-* list of 
+* list of
 * items
 
 And some code blocks
@@ -26,4 +27,4 @@ And a blockquote
 
 And an image tht I had via the Rich text part
 
-![Alt GoVoteTusc logo](/img/square logo alt.png)
+![Alt GoVoteTusc logo](/img/square_logo_alt.png)

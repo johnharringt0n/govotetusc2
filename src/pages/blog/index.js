@@ -12,7 +12,7 @@ const GridArea = styled.div`
 `;
 
 const PostContainer = styled.div`
-  border: 1px solid #999999;
+  border: 1px solid #cccccc;
   padding: 1rem;
   border-radius: 2px;
   display: grid;
