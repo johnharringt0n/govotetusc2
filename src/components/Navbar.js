@@ -6,7 +6,7 @@ import {
   faFacebookSquare,
 } from '@fortawesome/fontawesome-free-brands';
 import { faEnvelopeSquare } from '@fortawesome/fontawesome-free-solid';
-import logo from '../img/hor_logo.svg';
+import logo from '../img/hor_logo.png';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -56,12 +56,12 @@ class Navbar extends React.Component {
               <Link className="navbar-item" to="/about">
                 About Us
               </Link>
-              <Link className="navbar-item" to="/ballot-measures">
+              {/* <Link className="navbar-item" to="/ballot-measures">
                 Ballot Measures
               </Link>
               <Link className="navbar-item" to="/blog">
                 Blog
-              </Link>
+              </Link> */}
               <Link className="navbar-item" to="/events">
                 Events
               </Link>

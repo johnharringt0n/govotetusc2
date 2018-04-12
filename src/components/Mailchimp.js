@@ -86,7 +86,7 @@ class Mailchimp extends React.Component {
                 className="input"
                 type="email"
                 name="email"
-                placeholder="Subscribe to the GoVoteTusc newsletter"
+                placeholder="Enter your email here"
                 onChange={this.handleChange}
                 disabled={this.state.isSubmitted}
               />
