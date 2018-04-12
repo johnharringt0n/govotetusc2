@@ -3,10 +3,11 @@ templateKey: ballot-measures
 title: Ballot Measures
 subtitle: Get to know the issues for 2018
 ---
-
 # Gerrymandering
 
-### Info
+## Info
+
+And this is new content I added in
 
 Info on gerrymandering
 
@@ -19,9 +20,9 @@ Info on gerrymandering
 
 Here you should take action
 
----
+- - -
 
-# Opiod Crisis
+# Opioid Crisis
 
 ### Info
 
