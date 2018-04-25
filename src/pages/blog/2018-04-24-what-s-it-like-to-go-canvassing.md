@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: What's It Like To Go Canvassing
+title: What It's Like To Go Canvassing
 date: 2018-04-25T06:04:19.202Z
 description: What's it like to go canvassing?
 tags:
