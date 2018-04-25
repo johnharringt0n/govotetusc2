@@ -58,10 +58,10 @@ class Navbar extends React.Component {
               </Link>
               {/* <Link className="navbar-item" to="/ballot-measures">
                 Ballot Measures
-              </Link>
+              </Link> */}
               <Link className="navbar-item" to="/blog">
                 Blog
-              </Link> */}
+              </Link>
               <Link className="navbar-item" to="/events">
                 Events
               </Link>
